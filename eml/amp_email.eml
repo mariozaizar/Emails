@@ -1,0 +1,231 @@
+Delivered-To: mariozaizar@gmail.com
+Received: by 2002:a37:8ec2:0:0:0:0:0 with SMTP id q185csp117481qkd;
+        Thu, 23 Apr 2020 15:46:06 -0700 (PDT)
+X-Received: by 2002:a05:6602:1da:: with SMTP id w26mr5973466iot.191.1587681966278;
+        Thu, 23 Apr 2020 15:46:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1587681966; cv=none;
+        d=google.com; s=arc-20160816;
+        b=g3zzydB0jZTnONednVe8ZwNUIRdGFTTW+B0qWKwZAvF2oWhLrAKC7171VbbOtOedEz
+         Te+9OhMGu6KevUiwyi4PadfYy6+U3RAcwvndnFn831X9xj0iGrBgyzL7SSmg2qBX0nAD
+         O7UBnBni2WIvNxgutCAic/JQFKQJ+X3gvqOs2T4dOb1Joa8el0SdHdnSz8jZaprfk/Jn
+         tfOB3V6gilpuD1iAwXBio1+u91mcpM8CtovKdu/zrthFXhijgBz9hjFxYgVx+Oim9Per
+         X2IwZOEThMie2v0+vi/ONJ/KGeylug8u3JLvlOH/6R7ihg12TG1DS7VNAHTCJjZHHqGk
+         uB+Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:reply-to:date:mime-version
+         :dkim-signature;
+        bh=ypIEy6GsDDYKu8bY9QXVNzCQGO9OLF9wuCKpkDvWhZU=;
+        b=R3TuhDPWOqkCffJcM6RAGJjMKsproOsiQwxIQwSC0TKp2MlVl+Wqh6Yovk+zgg2N2h
+         lK6SQv/LkdItKyE2sg6oHTaFfwxeYwxl+O8sVe6pOYsew1fsYa/+35Bq4a3YW9D4PeSu
+         pQYZzzn00bF0iVz5uwbYid81sSwhEOCvSkHbv3s3GlNxhb2vvqaxYnEVtGW2sxjiIkEk
+         o11i6Zp5Ejit4o71M1wuDMuTicMLn8B9dFVSy6fgdlO1uaj5Qxc27Ar9Zzukr+C+TZwE
+         2BIOpMAqp3jP0JvzeB5+uZwL9HRKpQfee6/nHSzWECwNqQMPd2FXELx7P0iViHjKFW14
+         52Ow==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.dev header.s=google header.b=QvUbJJpM;
+       spf=pass (google.com: domain of 3rrqixhcbagyhcreqmg-qemp-tpeckvsyrhettmh.ksskpiywivgsrxirx.gsq@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3rRqiXhcbAGYHcREQMG-QEMP-TPEcKVSYRHETTMH.KSSKPIYWIVGSRXIRX.GSQ@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=gmail.dev
+Return-Path: <3rRqiXhcbAGYHcREQMG-QEMP-TPEcKVSYRHETTMH.KSSKPIYWIVGSRXIRX.GSQ@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id d11sor2360135jac.7.2020.04.23.15.46.06
+        for <mariozaizar@gmail.com>
+        (Google Transport Security);
+        Thu, 23 Apr 2020 15:46:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3rrqixhcbagyhcreqmg-qemp-tpeckvsyrhettmh.ksskpiywivgsrxirx.gsq@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.dev header.s=google header.b=QvUbJJpM;
+       spf=pass (google.com: domain of 3rrqixhcbagyhcreqmg-qemp-tpeckvsyrhettmh.ksskpiywivgsrxirx.gsq@m3kw2wvrgufz5godrsrytgd7.apphosting.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3rRqiXhcbAGYHcREQMG-QEMP-TPEcKVSYRHETTMH.KSSKPIYWIVGSRXIRX.GSQ@M3KW2WVRGUFZ5GODRSRYTGD7.apphosting.bounces.google.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=gmail.dev
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.dev; s=google;
+        h=mime-version:date:reply-to:message-id:subject:from:to;
+        bh=ypIEy6GsDDYKu8bY9QXVNzCQGO9OLF9wuCKpkDvWhZU=;
+        b=QvUbJJpM1bI4sq3xufAdlDmhkJ/AarHdXFnvZdJMB5iXJLZuExnRY5JRS4NQ5BEYJy
+         SqtmSDFd352lFusoyS/yBU6CcaH6UJQhPiaDpC9sNOC5M/yH4zB4Ion8YAPoLZsMIeoz
+         dC1zCVG+tFCGZvLAnZ7wpYG9jX5S1INFooacZIdJojROwdB2QSc2/ugN23CK5H3mrsQl
+         T1rhY+1/t7WW7WCGE3OS1dZ5IRCCRSRF8j4gcSs0CqfBM+yyxmIPut/PuyFzJeaDZnwa
+         JG0dw8TNvcSjcj1z6f+KJpSxYfo/OVxh7FuVUnGoMN2gfNm9680aU2Er4EIcFQ3EZK00
+         greA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:reply-to:message-id:subject
+         :from:to;
+        bh=ypIEy6GsDDYKu8bY9QXVNzCQGO9OLF9wuCKpkDvWhZU=;
+        b=o8HhYGwmn19uuy7H10WTt/UBKr68WdoNGXsM6NaxX1b1vDK7og06qSm5h4XmrRd/iO
+         RbqqHTPwD+Uh8Y6jTTyvNRZ0yc4AP8erclzl8fpRDxTvoe4ZQpka3aK5TOgGg1WpbpRJ
+         yp9G+2xgAXuH2RJmCiZyBFUDxigJNAr6MvamtziThY20rNm5YBNGgU+EIrWcdCi5uoZU
+         OA4GzLaKnucTuYavZlNxL1LffgBpv8Jj79RHY/CnvC0ckv84foAQvDDGAE418z2RiItN
+         cLf6I9Nc5J24ONxa0bDoqJcjH2qX7RD6iCaOHvmVHiuqvYFM/LL4zyJJoazUcDp7G62M
+         y3/w==
+X-Gm-Message-State: AGi0PuZxJxiodP2o2EtIRY4YEpsmxe+he+fEk7CifeUEDJGlSKUpal9o
+	ZNwZL/TkDnDkgXMPsRMb5eiNf26iyqSEH/x4jHwz4op8Hnr5
+X-Google-Smtp-Source: APiQypIVLLa3GhqdqAsebQCR0/kMddNvwOh72cNE7wVfiU/CBrsmpE6vfu4MZL/zgZGwDh6Fjw5d9XyGAPWD9dqwAdoO9JL/+wGR
+MIME-Version: 1.0
+X-Received: by 2002:a02:205:: with SMTP id 5mr5249955jau.78.1587681965846;
+ Thu, 23 Apr 2020 15:46:05 -0700 (PDT)
+Date: Thu, 23 Apr 2020 15:46:05 -0700
+Reply-To: amp@gmail.dev
+X-Google-Appengine-App-Id: s~dynamic-mail-playground
+X-Google-Appengine-App-Id-Alias: dynamic-mail-playground
+Message-ID: <00000000000097332c05a3fd03eb@google.com>
+Subject: Hello, AMP4EMAIL world
+From: amp@gmail.dev
+To: mariozaizar@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000097330e05a3fd03e8"
+
+--00000000000097330e05a3fd03e8
+Content-Type: text/plain; charset="UTF-8"
+
+This is the plain text content. To see dynamic emails sent from amp@gmail.dev in Gmail, whitelist amp@gmail.dev in Gmail Settings > General > Dynamic email > Developer settings.
+--00000000000097330e05a3fd03e8
+Content-Type: text/x-amp-html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!--
+  ## Introduction
+
+  [`amp-bind`](/content/amp-dev/documentation/components/reference/amp-bind-v0.1.md) allows you to add custom interactivity to your pages beyond using AMP's pre-built components.
+--><!-- -->
+<!doctype html>
+<html ⚡4email>
+<head>
+<meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <!--
+      ## Setup
+
+      Import the amp-bind component in the header.
+    -->
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <style amp4email-boilerplate>body{visibility:hidden}</style>
+      <style amp-custom>
+        .background-green {
+          background: green;
+        }
+        .background-red {
+          background: red;
+        }
+      </style>
+  </head>
+  <body>
+
+    <!--
+      ## Basic usage
+
+      With `amp-bind`, you can update element attributes and values via bindings. Here we update the [`hidden`](/content/amp-dev/documentation/guides-and-tutorials/learn/amp-actions-and-events.md#globally-defined-events-and-actions) attribute based on a state variable called `hideGreeting`. On button press, we use the [`AMP.setState()`](/content/amp-dev/documentation/components/reference/amp-bind.md#state) action to update the state.
+    -->
+    <div>
+      <div hidden [hidden]="hideGreeting">Hello World</div>
+      <button on="tap:AMP.setState({ hideGreeting: false })">Show greeting</button>
+    </div>
+
+    <!--
+      ## Binding text
+
+      You can dynamically change the text value of an element by declaring a binding to the `[text]` attribute.
+    -->
+    <div>
+      <div>Hello <span [text]="myText">World</span></div>
+      <button on="tap:AMP.setState({ myText: 'AMP' })">Change text</button>
+    </div>
+
+    <!--
+      ## Binding CSS classes
+
+      You can dynamically change the CSS classes of an element by adding a binding to the `[class]` attribute.
+    -->
+    <div>
+      <div class="background-red" [class]="myClass">Hello World</div>
+      <button on="tap:AMP.setState({ myClass: 'background-green' })">Change class</button>
+    </div>
+
+    <!--
+      ## Binding width and height
+
+      Basic element properties such as `width` and `height` can be updated as well.
+    -->
+    <div>
+      <amp-img src="https://unsplash.it/400/200" width="200" [width]="myImageDimension.width" height="100" [height]="myImageDimension.height">
+      </amp-img>
+      <button on="tap:AMP.setState({
+                        myImageDimension: {
+                          width: 400,
+                          height: 200
+                        }
+                      })">
+        Change size
+      </button>
+    </div>
+
+    <!--
+      ## Hiding & showing
+
+      This sample toggles the visibility of two divs based on a input selection. AMP provides the [`hidden` attribute](/documentation/guides-and-tutorials/learn/amp-actions-and-events#globally-defined-events-and-actions), which we use to hide and show the two divs. Some elements, such as the `select` element, fire [events](/documentation/guides-and-tutorials/learn/amp-actions-and-events#element-specific-events) we can use to update state. -->
+
+      <div>
+        <select on="change:AMP.setState({ option: event.value })">
+          <option value="0">No selection</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+        </select>
+        <div hidden [hidden]="option != 1">
+          Option 1
+        </div>
+        <div hidden [hidden]="option != 2">
+          Option 2
+        </div>
+      </div>
+
+      <!--
+        ## Initializing state
+
+        The initial value of an `amp-state` variable is `null`. However, bindings are not evaluated on page load, but on subsequent user actions. This can lead to unwanted side effects if `amp-state` variables are not correctly initialized.
+
+        In this sample, both greetings bind to different `amp-state` variables. One is initialized via an JSON string inside an `amp-state` element, the other is not. When the user triggers an `AMP.setState(...)` action, both bindings will be evaluated resulting in the first binding displaying a `null` value.
+      -->
+      <div>
+        <amp-state id="myText"><script type="application/json"> "World" </script></amp-state>
+          <div>1. Hello <span [text]="undefinedText">World</span></div>
+          <div>2. Hello <span [text]="myText">World</span></div>
+          <button on="tap:AMP.setState({ myText: 'AMP' })">Change state</button>
+      </div>
+        <!--
+          ## Push State
+
+          `AMP.pushState()` writes state changes to the history. Navigating back, will restore the previous state.
+          To test this, increase the count and use your browser's back button to decrease the count.
+        -->
+        <div>
+          <amp-state id="count"><script type="application/json">1</script></amp-state>
+            <div>Item <span [text]="count">1</span></div>
+            <button on="tap:AMP.pushState({ count: count + 1 })">Increase count</button>
+        </div>
+
+        <!--
+          ## Debounce input events
+
+          For text input, it's a good idea to debounce the input using the `input-throttled` event.  For a more in-depth example, see [autosuggest](https://amp.dev/documentation/examples/interactivity-dynamic-content/simple_autosuggest/). -->
+        <div>
+          <amp-state id="name"><script type="application/json"> "?" </script></amp-state>
+            <input id="name-input" placeholder="Enter a name" on="input-throttled:AMP.setState({ name: event.value })">
+            <div>Hello <span [text]="name">?</span></div>
+        </div>
+
+        <!--
+         ## amp-bind-macro
+
+         [`amp-bind-macro`](/content/amp-dev/documentation/components/reference/amp-bind.md#defining-macros-with-amp-bind-macro) makes it possible to reuse expressions across different actions. -->
+          <div>
+            <amp-bind-macro id="circleArea" arguments="radius" expression="3.14 * radius * radius">
+              <input type="number" min="0" max="100" value="0" on="input-throttled:AMP.setState({ radius: event.value })">
+              <div>
+                The circle has an area of <span [text]="circleArea(radius)">0</span>.
+              </div>
+          </amp-bind-macro></div>
+</body></html>
+--00000000000097330e05a3fd03e8
+Content-Type: text/html; charset="UTF-8"
+
+This is the <b>HTML content</b>. To see dynamic emails sent from amp@gmail.dev in Gmail, whitelist amp@gmail.dev in Gmail Settings > General > Dynamic email > Developer settings.
+--00000000000097330e05a3fd03e8--
